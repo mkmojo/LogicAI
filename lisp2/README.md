@@ -1,3 +1,4 @@
+```lisp
 ;;Problem #1:
 (distinct-bindings '(?x ?y ?z) '(a b c d e))
 
@@ -20,3 +21,4 @@
 ;;The ferry-state is the state, which sholud only contain 
 ;;ground constanst
 (operator-instances ferry-board ferry-state)
+```

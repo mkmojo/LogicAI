@@ -431,7 +431,7 @@
        (u_list (distinct-bindings var_list const_list)))
     (resolute u_list predicate state)
     )
-  )
+)
 ;;This modified version keeps the var_list
 ;;keeping the var_list simplify the work
 ;;of has-unifier 
