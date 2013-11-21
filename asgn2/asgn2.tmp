@@ -1,0 +1,14 @@
+% asgn2.top
+\unprotect
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!n=1,\c!m=1]
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=macosx]
+\setupsystem[\c!random=589]
+\setupsystem[inputfile=asgn2.tex]
+\startsetups *runtime:options
+\setupoutput[pdftex]
+\stopsetups
+\startsetups *runtime:modules
+\stopsetups
+\protect \endinput

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<image name="Tom-Jerry.jpg">
+  <caption> Tom, looking dapper in his green shirt, with Grandma Jerry at The Summit. </caption>
+  <humans>
+    <human name="Human2">
+      <age>
+        <value key="0to3">0.1666</value>
+        <value key="4to11">0.2316</value>
+        <value key="12to17">0.2197</value>
+        <value key="18to25">0.0837</value>
+        <value key="26to39">0.0432</value>
+        <value key="40to55">0.1315</value>
+        <value key="55plus">0.1237</value>
+      </age>
+      <race>
+        <value key="white">0.349</value>
+        <value key="black">0.0932</value>
+        <value key="asian">0.2368</value>
+        <value key="hispanic">0.2018</value>
+        <value key="eindian">0.1192</value>
+        <value key="arab">0</value>
+      </race>
+      <sex>
+        <value key="male">0.3788</value>
+        <value key="female">0.6212</value>
+      </sex>
+      <hair>
+        <value key="bald">0.0723</value>
+        <value key="blonde">0.1484</value>
+        <value key="brunette">0.2646</value>
+        <value key="dark">0.3266</value>
+        <value key="grey">0.0779</value>
+        <value key="red">0.1101</value>
+      </hair>
+      <eye>
+        <value key="blue">0.2452</value>
+        <value key="brown">0.2034</value>
+        <value key="dark">0.3893</value>
+        <value key="green">0.1621</value>
+      </eye>
+      <face>
+        <value key="thin">0.2227</value>
+        <value key="normal">0.4947</value>
+        <value key="round">0.2826</value>
+      </face>
+      <mustache>
+        <value key="true">0</value>
+        <value key="false">1</value>
+      </mustache>
+      <beard>
+        <value key="true">0</value>
+        <value key="false">1</value>
+      </beard>
+      <glasses>
+        <value key="true">0.0452</value>
+        <value key="false">0.9548</value>
+      </glasses>
+      <sunglasses>
+        <value key="true">0</value>
+        <value key="false">1</value>
+      </sunglasses>
+      <smiling>
+        <value key="true">0.2427</value>
+        <value key="false">0.7573</value>
+      </smiling>
+      <hat>
+        <value key="true">0</value>
+        <value key="false">1</value>
+      </hat>
+    </human>
+    <human name="Human3">
+      <age>
+        <value key="0to3">0.1384</value>
+        <value key="4to11">0.1692</value>
+        <value key="12to17">0.1547</value>
+        <value key="18to25">0.0644</value>
+        <value key="26to39">0.0552</value>
+        <value key="40to55">0.1559</value>
+        <value key="55plus">0.2621</value>
+      </age>
+      <race>
+        <value key="white">0.3375</value>
+        <value key="black">0.2698</value>
+        <value key="asian">0.1</value>
+        <value key="hispanic">0.1243</value>
+        <value key="eindian">0.1683</value>
+        <value key="arab">0</value>
+      </race>
+      <sex>
+        <value key="male">0.5232</value>
+        <value key="female">0.4768</value>
+      </sex>
+      <hair>
+        <value key="bald">0.2327</value>
+        <value key="blonde">0.1682</value>
+        <value key="brunette">0.1057</value>
+        <value key="dark">0.1523</value>
+        <value key="grey">0.3111</value>
+        <value key="red">0.03</value>
+      </hair>
+      <eye>
+        <value key="blue">0.3019</value>
+        <value key="brown">0.2113</value>
+        <value key="dark">0.3676</value>
+        <value key="green">0.1193</value>
+      </eye>
+      <face>
+        <value key="thin">0.1345</value>
+        <value key="normal">0.3126</value>
+        <value key="round">0.5529</value>
+      </face>
+      <mustache>
+        <value key="true">0.4908</value>
+        <value key="false">0.5092</value>
+      </mustache>
+      <beard>
+        <value key="true">0.0953</value>
+        <value key="false">0.9047</value>
+      </beard>
+      <glasses>
+        <value key="true">0.8151</value>
+        <value key="false">0.1849</value>
+      </glasses>
+      <sunglasses>
+        <value key="true">0.0554</value>
+        <value key="false">0.9446</value>
+      </sunglasses>
+      <smiling>
+        <value key="true">1</value>
+        <value key="false">0</value>
+      </smiling>
+      <hat>
+        <value key="true">0.3143</value>
+        <value key="false">0.6857</value>
+      </hat>
+    </human>
+  </humans>
+</image>

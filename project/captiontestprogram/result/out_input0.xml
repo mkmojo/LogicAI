@@ -1,0 +1,37 @@
+<?xml?>
+<humans>
+<human name="ben">
+<align name="human3" prob="0.6666667"/>
+<pred name="person.n" prob="0.99995"/>
+<pred name="male.n" prob="0.995"/>
+<pred name="senior.n" prob="0.63105"/>
+<pred name="racially-white.a" prob="0.66875"/>
+<pred name="gray-haired.a" prob="0.65555"/>
+<pred name="dark-eyed.a" prob="0.6838"/>
+<pred name="round-faced.a" prob="0.77645004"/>
+<pred name="mustacheless.a" prob="0.5046"/>
+<pred name="mustachioed.a" prob="0.4954"/>
+<pred name="beardless.a" prob="0.95235"/>
+<pred name="wearing-glasses.a" prob="0.90755"/>
+<pred name="not-wearing-sunglasses.a" prob="0.9723"/>
+<pred name="smiling.a" prob="1.0"/>
+<pred name="hatless.a" prob="0.84284997"/>
+</human>
+<human name="lillian">
+<align name="human2" prob="0.6666667"/>
+<pred name="person.n" prob="0.99995"/>
+<pred name="female.n" prob="0.995"/>
+<pred name="child.n" prob="0.3658"/>
+<pred name="teen.n" prob="0.35985"/>
+<pred name="racially-white.a" prob="0.6745"/>
+<pred name="dark-haired.a" prob="0.6633"/>
+<pred name="dark-eyed.a" prob="0.69465"/>
+<pred name="oval-faced.a" prob="0.74735"/>
+<pred name="mustacheless.a" prob="1.0"/>
+<pred name="beardless.a" prob="1.0"/>
+<pred name="not-wearing-glasses.a" prob="0.9774"/>
+<pred name="not-wearing-sunglasses.a" prob="1.0"/>
+<pred name="unsmiling.a" prob="0.87865"/>
+<pred name="hatless.a" prob="1.0"/>
+</human>
+</humans>

@@ -1,0 +1,18 @@
+For the record, I'm saving an old data set for the reggi-ben.jpg
+image, which I had inferred from 
+~schubert/lbs/W*/progress*/phase1-option1-report-july30-11,
+using the general uncertainties in classification given later
+in the report.
+
+
+   (reggi-ben.jpg "Ben and his friend Reggi, at the park."
+     (human2 .80 child .53 white .88 female .70 blonde .50 blue-eyed .57
+            ; ^^ hallucinated % --unavailable
+      round-faced .55 mustache .52 smiling .79 bare-headed .63 dim-purple-shirt .50)
+                                                  ; hallucinated % --unavailable ^^
+     (human3 .80 child .53 white .88 male .70 grey-haired .50 brown-eyed .57
+            ; ^^
+      round-faced .55 mustache .52 unsmiling .79 hat .63 dark-slate-grey-shirt .50))
+                                                                               ;^^
+
+

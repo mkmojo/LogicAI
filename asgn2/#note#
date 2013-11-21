@@ -1,0 +1,71 @@
+//note for using latex
+1. The first thing to do is to change the 
+    Assignment title 
+    Due date at line   
+    at the "NAME AND CLASS SECTION"  
+2. Then is to answer the problem 
+
+    For any problem you want to add
+    copy and paste the following thing
+
+    \begin{homeworkProblem}
+    \end{homeworkProblem}
+    These two lines will keep the problem automatica naming going
+
+    \begin{homeworkSection}
+    {(x)}
+    \end{homeworkSection}
+    These two lines help you add as many sections in your homework 
+    as possible
+
+    \problemAnswer{
+        %this puts a box around your asnwer
+    }
+%----------------------------------------------------------------------------------------
+%	PROBLEM #
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    Your question description here.
+\begin{homeworkSection}
+{(a)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    Your answer inside here.
+}
+\end{homeworkSection}
+\begin{homeworkSection}
+
+{(b)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    Your answer inside here.
+}
+\end{homeworkSection}
+\end{homeworkProblem}
+
+----------------------------------------------------------------------------
+//The above is about how to use Latex
+//The following is about the problem set in Assignment2 handout.
+The term assignment looks like this $T_{IU}$. The $I$ is the interpretation 
+of that is defined in the model $M = (D,I)$. The $D$ here is the set that has entities in it. For example  $U$ here is the assign for all the elements in the model.
+
+The $I$ in the model $M$ is the combination for all possible interpretation for symbols in meta language to object language ( object language represents the real world; meta language are the artificial symbols )
+
+
+----------------------------------------------------------------------------
+//Prove Validity
+
+The key here is to follow 
+    First, the definition of $\exists$ or $\forall$. This will turn problem into a satisfaction condition.
+    Second, the definition of satisfaction condition.
+    Third, the definition of term assignment
+    Forth, the definition of variable assignment
+
+
+----------------------------------------------------------------------------
+//Prove Entailment 
+
+
+

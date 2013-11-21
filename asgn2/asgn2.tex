@@ -1,0 +1,523 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+
+\usepackage{listings}
+\lstset{ 
+        language=Matlab,                                % choose the language of the code
+%       basicstyle=10pt,                                % the size of the fonts that are used for the code
+        %numbers=left,                                   % where to put the line-numbers
+        %numberstyle=\footnotesize,                      % the size of the fonts that are used for the line-numbers
+        %stepnumber=5,                                           % the step between two line-numbers. If it's 1 each line will be numbered
+        %numbersep=5pt,                                  % how far the line-numbers are from the code
+		%backgroundcolor=\color{light-gray},          % choose the background color. You must add \usepackage{color}
+        showspaces=false,                               % show spaces adding particular underscores
+        showstringspaces=false,                         % underline spaces within strings
+        showtabs=false,                                         % show tabs within strings adding particular underscores
+%       frame=single,                                           % adds a frame around the code
+%       tabsize=2,                                              % sets default tabsize to 2 spaces
+%       captionpos=b,                                           % sets the caption-position to bottom
+        breaklines=true,                                        % sets automatic line breaking
+        breakatwhitespace=false,                        % sets if automatic breaks should only happen at whitespace
+        escapeinside={\%*}{*)},                          % if you want to add a comment within your code
+        xleftmargin=.50in
+}
+\usepackage{color}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{MnSymbol}% Used for \Box
+
+
+
+
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ 2} % Assignment title
+\newcommand{\hmwkDueDate}{Tue,\ Oct.\ 15,\ 2013} % Due date
+\newcommand{\hmwkClass}{CS\ 444} % Course/class
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Qiyuan Qiu} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    Validity
+\begin{homeworkSection}
+{(a) $\models \phi \Rightarrow (\psi \Rightarrow \phi)$}
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+For any model $M=(D,I)$ \\
+    $\phi \Rightarrow (\psi \Rightarrow \phi)$ iff \\
+    $\neg \phi \vee (\psi \Rightarrow \phi)$ iff \\
+    $\neg \phi \vee \neg \psi \vee \phi$ \\
+    Because $\neg \ \phi \vee \ \phi$ is always true, therefore the original formula is always true with  \\
+    regard to all models. 
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b) $\models (P(A) \wedge A=B) \Rightarrow P(B)$}
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+For any model $M=(D,I)$ \\
+    $(P(A) \wedge A=B) \Rightarrow P(B)$ iff \\
+    $\neg (P(A) \wedge A=B) \vee P(B)$ iff \\ 
+    $\neg P(A) \vee \neg (A=B) \vee P(B)$ \\
+    There are two cases:\\
+    First, when A=B is true,  $\neg P(A) \vee \neg (A=B) \vee P(B)$ is equivalent to $\neg P(A) \vee P(A)$, which is always true.\\
+    Second, when A=B is false, $\neg (A=B)$ is true, then the original formula is true with reagard to any model. 
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c) $\models (\exists x A = x)$}
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+\begin{tabular}{l l}
+$\models (\exists x A = x)$ iff for all models $M=(D,I)$ $\models_{M} A=x$ & Truth in all models\\
+iff for all v.a. $U$ and all models $M$\\
+$\models_{M}(\exists x A = x)[U]$ & Satisfaction condition \\
+iff for some $d\in D $ $T_{IU_{x:d}} \in (A=x)^I = \{A\}$  & Term assignment \\
+iff for some $d \in \{A\} \cup \{D-\{A\}\} , d \in \{A\}$ & Definition of term assignment \\
+TRUE
+\end{tabular}
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(d) $\models (\forall x (\forall y(( P(x) \wedge x = y) \Rightarrow P(y))))$}
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+Let $M = (D,I) be an arbitrary model$, let $d1, d2\in D \wedge \neg d1 = d2$ be two arbitrary varialbles. \\
+The original claim is true iff\\
+\begin{tabular}{l l}
+iff $\models_{M}(\forall x (\forall y(( P(x) \wedge x = y) \Rightarrow P(y))))[U]$ & Definition of truth in a model\\
+iff $\models_{M}(\forall x (\forall y(( P(x) \wedge x = y) \Rightarrow P(y))))[U_{x:d_{1}\ y:d_{2}}]$ & Definition of satisfaction condition for $\forall$ \\
+iff for all $<d_{1},d_{2}> \in D^2$ $T_{IU_{x:d{1}\ y:d_{2}}} \in (P(X) \wedge x = y \Rightarrow P(y))^I$ &Term assignment \\
+iff for all $<d_{1},d_{2}> \in D^2$ , $<d_{1},d_{2}> \in D^2$ & Definition of variable assignment \\
+TRUE
+\end{tabular}
+}
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+\begin{homeworkSection}
+{(a) Prove that $P(A), A=B \models P(B)$}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    For all model $M = (D,I)$, any v.a. $U$, \\
+    $\models_{M} P(A), A=B [U]$ \\
+    $T_{IU}(A) \in P^I$\\
+    $T_{IU}(A)  = T_{IU}(B)$\\
+    Therefore, \\
+    $T_{IU}(B) = T_{IU}(A) \in P^I$\\
+    $T_{IU}(B) \in P^I$
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b) Prove that $\phi \models (\psi \Rightarrow \phi)$}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+For all $M$, all v.a. $U$ \\
+$\models_{M} \phi [U]$ \\
+$\models_{M} \psi \Rightarrow \phi [U]$ \\
+iff $\models_{M} \neg \psi \Rightarrow \phi [U]$ \\
+iff $\neg \models_{M} \psi [U] \vee \models_{M} \phi [U] $  which is always true.\\
+Therefore $\phi \models (\phi \Rightarrow \psi)$
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c) Prove that $\frac{\phi}{\phi \vee \psi}$ is sound}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+For all $M$, all v.a. $U$ \\
+$\models_{M} \phi [U]$ \\
+This is equivalent to\\
+$\models_{M} \phi [U] \vee \models_{M}\psi [U]$\\
+All models of $\phi$ are models of $\phi \vee \psi$.\\
+Therefore this is sound.
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(d) Prove that $\frac{\phi \Rightarrow \psi , \psi \Rightarrow \chi}{\phi \vee \psi} $ is sound}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+For all $M$, all v.a. $U$ \\
+$\models_{M} \Rightarrow \psi [U]$ iff $\models_{M} \neg \phi [U] \vee \models_{M} \psi [U]$\\
+$\models_{M} \psi \Rightarrow \chi [U]$ iff $\models_{M} \neg \psi [U] \vee \models_{M} \chi [U]$ \\
+$\models_{M} \phi \Rightarrow \chi [U]$ iff $\models_{M} \neg \phi [U] \vee \models_{M} \chi [U] $  \\
+Therefore \\
+$\models_{M} \phi \Rightarrow \psi , \psi \Rightarrow \chi [U]$ \\
+iff $\models_{M} (\neg \phi \vee \psi \vee \neg \phi \vee \chi) [U]$ \\
+iff $\models_{M} (\neg \phi \vee \chi) [U]$ \\
+i.e. $\models_{M} \phi \Rightarrow \chi \Box$
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(e) In what sense is soundness a ''good '' property of  a proof system?}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+Because ``sound`` inference gurantees correct conclusions as long as premises are true.
+ 
+}
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    %Your question description here.
+    Given that: \\
+    1. $(\forall x M(x) \Rightarrow (\exists y  A(y) \wedge H(x,y)))$ \\
+    2. $(\forall x M(x) \Rightarrow L(x))$ \\
+    3. $(\exists x M(x))$ \\
+    Goal: \\
+    $L(S) \wedge A(C) \wedge H(S,C)$
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+
+\begin{tabular} { l l }
+    1. $(\forall x M(x) \Rightarrow (\exists y  A(y) \wedge H(x,y)))$ & $\Delta$ \\
+    2. $(\forall x M(x) \Rightarrow L(x))$  					& $\Delta$ \\
+    3. $(\exists x M(x))$  									& $\Delta$ \\
+    4. $M(S) \Rightarrow (\exists y  A(y) \wedge H(S,y))$			& UI, 1 \\
+    5. $M(S) \Rightarrow L(S)$								& UI, 2 \\
+    6. $M(S)$											& EI, 3 \\
+    7. $M(S) \Rightarrow  A(C) \wedge H(S,C)$					& EI, 4 \\
+    8. $L(S)$											& MP, 5 \\
+    9. $A(C) \wedge H(S,C)$								& MP, 4, 6 \\
+    10.$L(S) \wedge A(C) \wedge H(S,C)$ 					& AI, 8 , 9 \\
+\end{tabular}
+}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    %Your question description here.
+    Given that: \\
+    1. $(\forall x M(x) \Rightarrow (\exists y A(y) \wedge H(x,y)))$ \\
+    2. $(\forall x M(x) \Rightarrow L(x))$ \\
+    3. $(\forall x L(x) \Rightarrow \neg (\exists y A(y) \wedge H(x,y)))$ \\
+    Goal: \\
+    $\neg (\exists x M(x))$ \\
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+    \begin{tabular}{ l l}
+    1. *Show $\neg (\exists x M(x))$ \\
+    2. \ $(\exists x Mx)$ & Assume \\
+    3. \ $M(z)$ & 2,EI\\
+    4. \ $(\forall x M(x) \Rightarrow (\exists y A(y) \wedge H(x,y)))$ & Prem \\
+    5. \ $(\forall x M(x) \Rightarrow L(x))$ & Prem \\
+    6. \ $(\forall x L(x) \Rightarrow \neg (\exists y A(y) \wedge H(x,y)))$ &  Prem \\
+    7. \ $M(z) \Rightarrow A(c) \wedge H(z,c)$ & 4, UI, EI \\
+    8. \ $M(z) \Rightarrow L(k)$ & 5, UI, EI \\
+    9. \ $L(K) \Rightarrow \neg (A(c) \wedge H(z,c))$ & 6. UI, EI\\
+    11. \ \ *Show $\neg A(c) \wedge H(z,c)$ \\
+    12. \ \ $A(c) \wedge H(z,c)$ & 3, 7, MP \\
+    13. \ \ $\Box$ \\
+    \end{tabular}
+}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    %Your question description here.
+\begin{homeworkSection}
+{(a)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+}
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    %Your question description here.
+\begin{homeworkSection}
+{(a) Find the m.g.u. of $\neg Q(x,z,g(x))$ and $Q(f(A), h(y), g(f(y)))$}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+   1. $x/f(A)$ we get $\neg Q(f(A),z,g(x))$ and $Q(f(A), h(y), g(f(y)))$\\
+   2. $z/h(y)$ we get $\neg Q(f(A),h(y),g(x))$ and $Q(f(A), h(y), g(f(y)))$\\
+   3. $y/A$ we get $\neg Q(f(A),h(A),g(x))$ and $Q(f(A), h(A), g(f(A)))$\\
+   The m.g.u for this problem is 
+   \begin{center}
+   $((x/f(A)),\ (z/h(y)),\ ($y/A$))$
+   \end{center}
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b) Find 2 resolvents of $\neg P(x) \vee \neg Q(f(x),y)$ , $Q(u,f(v)) \vee Q(f(u),v)$}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+   1. r[ 1b, 2b]: $\neg P(u) ,\  Q(f(u), v)$ with m.g.u $((x/u),\ (y/v))$. \\
+   2. r[ 1b, 2a]: $\neg P(x), \ Q(f(u), v)$ with m.g.u $((u/f(x),\ (y/f(v)))).$ 
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c) Find 2 factors of $Q(f(x),y) \vee Q(y,f(x)) \vee Q(x,f(y))$}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+   1.f[1 a, c]: $Q(f(x), f(x)) \wedge Q(x,f(f(x)))$ with m.g.u (y/f(x)) \\
+   2.f[1 a, b]: $Q(f(x), f(x)) \wedge Q(f(x), f(x))$ with m.g.u (y/f(x))
+}
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 7
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\vspace{10pt} % Question
+    %Your question description here.
+\begin{homeworkSection}
+{(a)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+    1. $(\forall x \forall y S(x,y) \Rightarrow (\exists z parent(z,x) \wedge parent(z,y)))$ \\
+    2. $(\forall x \forall y M(x,y) \Rightarrow (\exists z P(z,x) \Rightarrow \neg P(z,y)))$ \\
+    3. $M(Jocasta,Oedipus)$\\
+    4. $S(Jocasta, Oedipus)$ (Reject Goal)
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+  For 1. $(\forall x \forall y S(x,y) \Rightarrow (\exists z parent(z,x) \wedge parent(z,y)))$ \\
+  First we eliminate $\Rightarrow$ \\
+  $\exists x \exists \neg S(x,y) \vee (\forall z parent(z,x) \wedge parent(z,y))$ \\
+  Then we move $\neg$ inward, which leaves equation the same \\
+  Then we skolemize, let $(x/J)(y/O)(z/K)$ \\
+  $\neg S(J, O) \vee (P(K, J) \wedge P(K,O))$, distribute $\vee$ over $\wedge$ we have\\
+ $(\neg S(J, O) \vee P(K, J)) \wedge (\neg S(J,O) \vee P(K,O))$ \\
+  Similarly for 2.$(\forall x \forall y M(x,y) \Rightarrow (\exists z P(z,x) \Rightarrow \neg P(z,y)))$ \\
+  we have \\
+  $\neg M(J, O) \vee \neg P(K, J) \vee \neg P(K, O)$
+  For 3.\\
+  $M(J, O)$ \\
+  For 4. \\
+  $S(J, O)$
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+    \begin{tabular}{l l}
+    1. $(\neg S(J, O) \vee P(K, J)) \wedge (\neg S(J,O) \vee P(K,O))$  & From (b) \\
+    2. $\neg M(J, O) \vee \neg P(K, J) \vee \neg P(K, O)$ & From (b)\\
+    3. $M(J, O)$ & From (b)\\
+    4. $S(J, O)$    & From (b) \\
+    5. $\neg P(K, J) \vee \neg P(K, O)$ & r[2a, 3] \\
+    6. $P(K, J) \wedge P(K,O)$ & r[1a, 4] \\
+    7. $\neg P(K, O)$ & r[5a, 6a] \\
+    8. $P(K, O)$  & r[7a 8]\\
+    9. $\Box$
+    \end{tabular}
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(d)}
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+    %Your answer inside here.
+    A written solution for this problem is attached at the end of this assignment print-out. 
+}
+\end{homeworkSection}
+\end{homeworkProblem}
+
+
+
+\end{document}

@@ -1,0 +1,27 @@
+(defun is-all-atom (inlist)
+  (if (atom inlist) t 
+      (and (atom (car inlist)) (is-all-atom (rest inlist))))
+)
+ 
+(defun get-all-literal (literal-list)
+  (if (is-all-atom literal-list) (if (atom literal-list) nil (rest literal-list))
+      (append (get-all-literal (car literal-list)) (get-all-literal (rest literal-list))))
+)
+
+;;Problem a
+(defun extract-constants (literal-list)
+  (setq list-of-all-literal (get-all-literal literal-list))
+  (remove-duplicates list-of-all-literal)
+)
+
+(trace get-all-literal)
+(trace is-all-atom)
+;; test cases for problem a
+;; (extract-constants '((On Table A) (On Table B) (On C B)) )
+;; (extract-constants '((Clear ?x) (Clear ?y) (not (Sleeping Robbie))  (Empty-handed Robbie) (At Robbie Table)))
+
+
+;;Problem b
+(defun prune-unifiers (unifier-list)
+
+)

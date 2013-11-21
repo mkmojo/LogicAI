@@ -1,0 +1,19 @@
+10/30/2013
+modified Jonathan's code
+to take in multiple files in local directory
+
+
+python knowledge learned
+1. os.path.join()
+    this is useful when creating subdirectory
+2. os.listdir()
+    can be used to get all the filenames in the directory
+    there are
+3. os.getcwd()
+    get current working directory
+
+
+The input1.xml and input2.xml are created from input0.xml.
+I just change the name in the caption. 
+
+

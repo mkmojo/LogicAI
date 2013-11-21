@@ -1,0 +1,194 @@
+;;Problem #1
+(distinct-bindings '(?x ?y ?z) '(a b c d e))
+;;(((?X A) (?Y B) (?Z C)) ((?X A) (?Y B) (?Z D)) ((?X A) (?Y B) (?Z E))
+;;((?X A) (?Y C) (?Z B)) ((?X A) (?Y C) (?Z D)) ((?X A) (?Y C) (?Z E))
+;;((?X A) (?Y D) (?Z B)) ((?X A) (?Y D) (?Z C)) ((?X A) (?Y D) (?Z E))
+;;((?X A) (?Y E) (?Z B)) ((?X A) (?Y E) (?Z C)) ((?X A) (?Y E) (?Z D))
+;;((?X B) (?Y A) (?Z C)) ((?X B) (?Y A) (?Z D)) ((?X B) (?Y A) (?Z E))
+;;((?X B) (?Y C) (?Z A)) ((?X B) (?Y C) (?Z D)) ((?X B) (?Y C) (?Z E))
+;;((?X B) (?Y D) (?Z A)) ((?X B) (?Y D) (?Z C)) ((?X B) (?Y D) (?Z E))
+;;((?X B) (?Y E) (?Z A)) ((?X B) (?Y E) (?Z C)) ((?X B) (?Y E) (?Z D))
+;;((?X C) (?Y A) (?Z B)) ((?X C) (?Y A) (?Z D)) ((?X C) (?Y A) (?Z E))
+;;((?X C) (?Y B) (?Z A)) ((?X C) (?Y B) (?Z D)) ((?X C) (?Y B) (?Z E))
+;;((?X C) (?Y D) (?Z A)) ((?X C) (?Y D) (?Z B)) ((?X C) (?Y D) (?Z E))
+;;((?X C) (?Y E) (?Z A)) ((?X C) (?Y E) (?Z B)) ((?X C) (?Y E) (?Z D))
+;;((?X D) (?Y A) (?Z B)) ((?X D) (?Y A) (?Z C)) ((?X D) (?Y A) (?Z E))
+;;((?X D) (?Y B) (?Z A)) ((?X D) (?Y B) (?Z C)) ((?X D) (?Y B) (?Z E))
+;;((?X D) (?Y C) (?Z A)) ((?X D) (?Y C) (?Z B)) ((?X D) (?Y C) (?Z E))
+;;((?X D) (?Y E) (?Z A)) ((?X D) (?Y E) (?Z B)) ((?X D) (?Y E) (?Z C))
+;;((?X E) (?Y A) (?Z B)) ((?X E) (?Y A) (?Z C)) ((?X E) (?Y A) (?Z D))
+;;((?X E) (?Y B) (?Z A)) ((?X E) (?Y B) (?Z C)) ((?X E) (?Y B) (?Z D))
+;;((?X E) (?Y C) (?Z A)) ((?X E) (?Y C) (?Z B)) ((?X E) (?Y C) (?Z D))
+;;((?X E) (?Y D) (?Z A)) ((?X E) (?Y D) (?Z B)) ((?X E) (?Y D) (?Z C)))
+;;
+;;Problem #2
+(setq state '((on a b) (on b table) (clear a)))
+;;Test case #1
+(literal-unifiers '(on ?y ?z) state '(a b table))
+;;(((?Y A) (?Z B)) ((?Y B) (?Z TABLE)))
+;;Test case #2
+(literal-unifiers '(not (on ?y ?z)) state '(a b table))
+;;(((?Y A) (?Z TABLE)) ((?Y B) (?Z A)) ((?Y TABLE) (?Z A))
+;; ((?Y TABLE) (?Z B)))
+
+
+;;Problem #3
+(defstruct op_t
+  var-list
+  preconds
+  effects)
+
+(setq ferry-board (make-op_t))
+(setf (op_t-var-list ferry-board) '(?x ?y))
+(setf (op_t-preconds ferry-board) 
+      '((auto ?x)
+      (place ?y)
+      (at ?x ?y)
+      (at-ferry ?y)
+      (empty-ferry)))
+(setf (op_t-effects ferry-board) 
+      '((on ?x Ferry)
+      (not (at ?x ?y))
+      (not (empty-ferry))))
+
+
+(setq ferry-sail (make-op_t))
+(setf (op_t-var-list ferry-sail) '(?x ?y))
+(setf (op_t-preconds ferry-sail) 
+     '((place ?x)
+      (place ?y)
+      (at-ferry ?x)))
+
+(setf (op_t-effects ferry-sail) 
+    '((at-ferry ?y)
+      (not (at-ferry ?x))))
+
+(setq ferry-debark (make-op_t))
+(setf (op_t-var-list ferry-debark) '(?x ?y))
+(setf (op_t-preconds ferry-debark) 
+     '((auto ?x)
+      (place ?y)
+      (on ?x Ferry)
+      (at-ferry ?y)))
+(setf (op_t-effects ferry-debark) 
+     '((not (on ?x Ferry))
+      (at ?x ?y)
+      (empty-ferry)))
+
+(setq ferry-state  '((place a) (place b) (auto c1) (auto c2)
+    (at c1 a) (at c2 a) (at-ferry a) (empty-ferry)))
+
+
+;;Hanoi Domain
+(setq hanoi-move-disk (make-op_t))
+(setf (op_t-var-list hanoi-move-disk) '(?disk ?below-disk ?new-below-disk))
+(setf (op_t-preconds hanoi-move-disk)
+        '((disk ?disk)
+        (smaller ?disk ?new-below-disk) ; Handles pegs
+        (on ?disk ?below-disk)
+        (clear ?disk)
+        (clear ?new-below-disk)))
+
+(setf (op_t-effects hanoi-move-disk)
+        '((clear ?below-disk)
+        (on ?disk ?new-below-disk)
+        (not (on ?disk ?below-disk))
+        (not (clear ?new-below-disk))))
+
+(setq hanoi-init-state 
+      '((smaller D1 P1) (smaller D2 P1) (smaller D3 P1)
+        (smaller D1 P2) (smaller D2 P2) (smaller D3 P2)
+        (smaller D1 P3) (smaller D2 P3) (smaller D3 P3)
+        (smaller D1 D2) (smaller D2 D3)
+        (clear P2) (clear P3) (clear D1)
+        (disk D1) (disk D2) (disk D3)
+        (on D1 D2) (on D2 D3) (on D3 P1)))
+
+
+;;Monkey Domain
+
+(setq monkey-go-to (make-op_t))
+(setf (op_t-var-list monkey-go-to) '(?x ?y))
+(setf (op_t-preconds monkey-go-to)
+        '((location ?x)
+        (location ?y)
+        (on-floor)
+        (at Monkey ?y)))
+(setf (op_t-effects monkey-go-to)
+        '((at Monkey ?x)
+        (not (at Monkey ?y))))
+
+(setq monkey-climb (make-op_t))
+(setf (op_t-var-list monkey-climb) '(?x))
+(setf (op_t-preconds monkey-climb)
+        '((location ?x)
+        (at Box ?x)
+        (at Monkey ?x)))
+(setf (op_t-effects monkey-climb)
+        '((on-box ?x)
+        (not (on-floor))))
+
+(setq monkey-push-box (make-op_t))
+(setf (op_t-var-list monkey-push-box) '(?x ?y))
+(setf (op_t-preconds monkey-push-box)
+        '((location ?x)
+        (location ?y)
+        (at Box ?y)
+        (at Monkey ?y)
+        (on-floor)))
+(setf (op_t-effects monkey-push-box)
+        '((at Monkey ?x)
+        (not (at Monkey ?y))
+        (at Box ?x)
+        (not (at Box ?y))))
+
+
+(setq monkey-get-knife (make-op_t))
+(setf (op_t-var-list monkey-get-knife) '(?y))
+(setf (op_t-preconds monkey-get-knife)
+        '((location ?y)
+        (at Knife ?y)
+        (at Monkey ?y)))
+(setf (op_t-effects monkey-get-knife)
+        '((has-knife)
+        (not (at Knife ?y))))
+
+(setq monkey-grab-bananas (make-op_t))
+(setf (op_t-var-list monkey-grab-bananas) '(?y))
+(setf (op_t-preconds monkey-grab-bananas)
+        '((location ?y)
+        (has-knife)
+        (at Bananas ?y)
+        (on-box ?y)))
+(setf (op_t-effects monkey-grab-bananas)
+      '((has-bananas)))
+
+(setq monkey-pick-up-glass (make-op_t))
+(setf (op_t-var-list monkey-pick-up-glass) '(?y))
+(setf (op_t-preconds monkey-pick-up-glass)
+      '((location ?y)
+        (at Glass ?y)
+        (at Monkey ?y)))
+(setf (op_t-effects monkey-pick-up-glass)
+        '((has-glass)
+        (not (at Glass ?y))))
+
+(setq monkey-get-water (make-op_t))
+(setf (op_t-var-list monkey-get-water) '(?y))
+(setf (op_t-preconds monkey-get-water)
+        '((location ?y)
+        (has-glass)
+        (at Waterfountain ?y)
+        (at Monkey ?y)
+        (on-box ?y)))
+(setf (op_t-effects monkey-get-water)
+        '((has-water)))
+
+(setq monkey-init1
+        '((location P1) (location P2) (location P3) (location P4)
+        (at Monkey P1) (on-floor) (at Box P2) (at Bananas P3)
+        (at Knife P4)))
+(setq monkey-init2
+        '((location P1) (location P2) (location P3) (location P4) (location P5)
+        (at Monkey P1) (on-floor) (at Box P2) (at Bananas P3) (at Knife P4)
+        (at Waterfountain P3) (at Glass P5)))

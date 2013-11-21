@@ -1,0 +1,90 @@
+grandma-moshe.jpg
+
+Human4
+
+Feature Human   Machine
+AGE     26to39  40to55
+RACE    WHITE   WHITE
+SEX     MALE    MALE
+HAIR    DARK    DARK
+EYE     BROWN   BROWN
+FACE    THIN    NORMAL
+
+Attribute       Human   Machine
+MUSTACHE
+BEARD
+GLASSES
+SUNGLASSES
+SMILING x       x
+HAT     x
+
+AGE     0to3    4to11   12to17  18to25  26to39  40to55  55plus
+fage=52.13     0.095   0.1784  0.2082  0.0854  0.0206  0.2254  0.187
+RACE    WHITE   BLACK   ASIAN   HISPANIC        EINDIAN ARAB
+        0.3844  0.0802  0.1757  0.144   0.2156  0
+SEX     MALE    FEMALE
+        0.5312  0.4688
+HAIR    BALD    BLONDE  BRUNETTE        DARK    GREY    RED
+        0.0428  0.148   0.2923  0.3059  0.1021  0.109
+EYE     BLUE    BROWN   DARK    GREEN
+        0.2736  0.3247  0.2677  0.134
+FACE    THIN    NORMAL  ROUND
+        0       0.5644  0.4356
+
+MUSTACHE        FALSE   TRUE
+        0.9049  0.0951
+BEARD   FALSE   TRUE
+        1       0
+GLASSES FALSE   TRUE
+        0.9012  0.0988
+SUNGLASSES      FALSE   TRUE
+        1       0
+SMILING FALSE   TRUE
+        0.1387  0.8613
+HAT     FALSE   TRUE
+        0.9373  0.0627
+
+Human5
+
+Feature Human   Machine
+AGE     55plus  55plus
+RACE    WHITE   WHITE
+SEX     FEMALE  FEMALE
+HAIR    GREY    GREY
+EYE     GREEN   BLUE
+FACE    NORMAL  ROUND
+
+Attribute       Human   Machine
+MUSTACHE
+BEARD
+GLASSES x       x
+SUNGLASSES
+SMILING x       x
+HAT
+
+AGE     0to3    4to11   12to17  18to25  26to39  40to55  55plus
+fage=58.42     0.075   0.1764  0.1844  0.0725  0.0115  0.2187  0.2616
+RACE    WHITE   BLACK   ASIAN   HISPANIC        EINDIAN ARAB
+        0.3632  0.1346  0.1661  0.1389  0.1972  0
+SEX     MALE    FEMALE
+        0.3656  0.6344
+HAIR    BALD    BLONDE  BRUNETTE        DARK    GREY    RED
+        0.1539  0.2138  0.1387  0.1398  0.3162  0.0376
+EYE     BLUE    BROWN   DARK    GREEN
+        0.2944  0.206   0.2943  0.2053
+FACE    THIN    NORMAL  ROUND
+        0       0.4474  0.5526
+
+MUSTACHE        FALSE   TRUE
+        0.9049  0.0951
+BEARD   FALSE   TRUE
+        0.9047  0.0953
+GLASSES FALSE   TRUE
+        0.0571  0.9429
+SUNGLASSES      FALSE   TRUE
+        0.7782  0.2218
+SMILING FALSE   TRUE
+        0       1
+HAT     FALSE   TRUE
+        0.8107  0.1893
+

@@ -1,0 +1,134 @@
+graduation2.jpg
+
+Human3
+
+Feature Human   Machine
+AGE     12to17  12to17
+RACE    WHITE   WHITE
+SEX     FEMALE  FEMALE
+HAIR    DARK    DARK
+EYE     BROWN   DARK
+FACE    NORMAL  NORMAL
+
+Attribute       Human   Machine
+MUSTACHE
+BEARD
+GLASSES
+SUNGLASSES
+SMILING x       x
+HAT
+
+AGE     0to3    4to11   12to17  18to25  26to39  40to55  55plus
+fage=12.95     0.0917  0.192   0.2568  0.0954  0.0544  0.1519  0.1577
+RACE    WHITE   BLACK   ASIAN   HISPANIC        EINDIAN ARAB
+        0.3776  0.0916  0.1636  0.1466  0.2206  0
+SEX     MALE    FEMALE
+        0.1386  0.8614
+HAIR    BALD    BLONDE  BRUNETTE        DARK    GREY    RED
+        0.0342  0.1566  0.2871  0.3081  0.0679  0.1462
+EYE     BLUE    BROWN   DARK    GREEN
+        0.2753  0.0787  0.3457  0.3003
+FACE    THIN    NORMAL  ROUND
+        0.3741  0.5548  0.0712
+
+MUSTACHE        FALSE   TRUE
+        0.797   0.203
+BEARD   FALSE   TRUE
+        0.6929  0.3071
+GLASSES FALSE   TRUE
+        1       0
+SUNGLASSES      FALSE   TRUE
+        1       0
+SMILING FALSE   TRUE
+        0       1
+HAT     FALSE   TRUE
+        0.7488  0.2512
+
+Human4
+
+Feature Human   Machine
+AGE     55plus  55plus
+RACE    WHITE   WHITE
+SEX     FEMALE  FEMALE
+HAIR    GREY    GREY
+EYE     DARK    DARK
+FACE    THIN    NORMAL
+
+Attribute       Human   Machine
+MUSTACHE
+BEARD
+GLASSES x       x
+SUNGLASSES
+SMILING x       x
+HAT
+
+AGE     0to3    4to11   12to17  18to25  26to39  40to55  55plus
+fage=69.39     0.1081  0.1998  0.1855  0.0674  0.0168  0.1725  0.25
+RACE    WHITE   BLACK   ASIAN   HISPANIC        EINDIAN ARAB
+        0.3528  0.1201  0.2022  0.127   0.198   0
+SEX     MALE    FEMALE
+        0.4938  0.5062
+HAIR    BALD    BLONDE  BRUNETTE        DARK    GREY    RED
+        0.1142  0.1771  0.1831  0.102   0.3055  0.1182
+EYE     BLUE    BROWN   DARK    GREEN
+        0.1669  0.2119  0.3966  0.2246
+FACE    THIN    NORMAL  ROUND
+        0       0.5641  0.4359
+
+MUSTACHE        FALSE   TRUE
+        1       0
+BEARD   FALSE   TRUE
+        1       0
+GLASSES FALSE   TRUE
+        0.1028  0.8972
+SUNGLASSES      FALSE   TRUE
+        0.7206  0.2794
+SMILING FALSE   TRUE
+        0.1215  0.8785
+HAT     FALSE   TRUE
+        1       0
+
+Human5
+
+Feature Human   Machine
+AGE     55plus  55plus
+RACE    WHITE   WHITE
+SEX     FEMALE  FEMALE
+HAIR    GREY    GREY
+EYE     GREEN   BLUE
+FACE    NORMAL  ROUND
+
+Attribute       Human   Machine
+MUSTACHE
+BEARD
+GLASSES x       x
+SUNGLASSES
+SMILING x       x
+HAT
+
+AGE     0to3    4to11   12to17  18to25  26to39  40to55  55plus
+fage=78.1      0.114   0.188   0.174   0.0655  0.0242  0.172   0.2623
+RACE    WHITE   BLACK   ASIAN   HISPANIC        EINDIAN ARAB
+        0.3784  0.11    0.2612  0.1469  0.1034  0
+SEX     MALE    FEMALE
+        0.392   0.608
+HAIR    BALD    BLONDE  BRUNETTE        DARK    GREY    RED
+        0.1781  0.1809  0.1206  0.1101  0.3278  0.0825
+EYE     BLUE    BROWN   DARK    GREEN
+        0.3561  0.2168  0.2325  0.1946
+FACE    THIN    NORMAL  ROUND
+        0       0.4474  0.5526
+
+MUSTACHE        FALSE   TRUE
+        0.8088  0.1912
+BEARD   FALSE   TRUE
+        1       0
+GLASSES FALSE   TRUE
+        0.0907  0.9093
+SUNGLASSES      FALSE   TRUE
+        0.8899  0.1101
+SMILING FALSE   TRUE
+        0       1
+HAT     FALSE   TRUE
+        0.8754  0.1246
+
