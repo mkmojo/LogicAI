@@ -1,0 +1,277 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+
+\usepackage{listings}
+\lstset{ 
+        language=Matlab,                                % choose the language of the code
+%       basicstyle=10pt,                                % the size of the fonts that are used for the code
+        %numbers=left,                                   % where to put the line-numbers
+        %numberstyle=\footnotesize,                      % the size of the fonts that are used for the line-numbers
+        %stepnumber=5,                                           % the step between two line-numbers. If it's 1 each line will be numbered
+        %numbersep=5pt,                                  % how far the line-numbers are from the code
+		%backgroundcolor=\color{light-gray},          % choose the background color. You must add \usepackage{color}
+        showspaces=false,                               % show spaces adding particular underscores
+        showstringspaces=false,                         % underline spaces within strings
+        showtabs=false,                                         % show tabs within strings adding particular underscores
+%       frame=single,                                           % adds a frame around the code
+%       tabsize=2,                                              % sets default tabsize to 2 spaces
+%       captionpos=b,                                           % sets the caption-position to bottom
+        breaklines=true,                                        % sets automatic line breaking
+        breakatwhitespace=false,                        % sets if automatic breaks should only happen at whitespace
+        escapeinside={\%*}{*)},                          % if you want to add a comment within your code
+        xleftmargin=.50in
+}
+\usepackage{color}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{MnSymbol}% Used for \Box
+
+
+
+
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ 4} % Assignment title
+\newcommand{\hmwkDueDate}{Tue,\ Nov.\ 27,\ 2013} % Due date
+\newcommand{\hmwkClass}{CS\ 444} % Course/class
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Qiyuan Qiu} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\begin{homeworkSection}
+{(a)}
+
+\end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\begin{homeworkSection}
+{(a)}
+
+(person 
+name: Al 
+gender: male 
+age-LB: 20
+age-UP: 20
+mother: Mary
+father: nil )
+
+(person 
+name: Mary 
+gender: female 
+age-LB: 45
+age-UP: 45
+mother: Mary
+father: nil )
+
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b)}
+\begin{verbatim}
+Rule for adding a mother WME to WM, 
+IF   (person name:x mother: nil age-LB: y) 
+      -(person name: [Mom(x)]) 
+THEN ADD (person name: [Mom(x)] gender: female age-LB: [y + 18] mother: nil father: nil)  
+      MODIFY 1 (mother: [Mom(x)]) 
+
+
+Rule for adding a father WME to WM, 
+IF  (person name:x father: nil age-LB: y) 
+     -(person name: [Dad(x)]) 
+THEN ADD (person name: [Dad(x)] gender: male age-LB: [y + 18] mother: nil father: nil) 
+     MODIFY 1 (father: [Dad(x)])
+\end{verbatim}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c)}
+We can associate with each production rule a number to indicate the frequency this rule has been fired.
+Then upon each time that we need to choose a rule to fire, we order all rules by their frequencies.
+If we consider only these two rules,  we always check and see if the smaller number of these two rules has passed a threshold (for example 5 (times)). If yes, we will delete these two production rules from our system; otherwise will keep them. \\
+
+Another trick we can apply to this rules is that we have a general rule of thumb that people usually do not live more than 100 years. Base on the observation that every time we add in a new WME by firing either one of these two rules, we will increment the age-LB of that newly introduced person. We can keep an eye on this age-LB, if this { age-LB > 100} we do not fire these two rules. Hence avoid a run-away inference loop.
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+\begin{homeworkSection}
+{(a)}
+\begin{verbatim}
+(Define STUDENT inherits-from 
+           (a PERSON with 
+           university-attended (a UNIVERSITY with default UR)
+           id-number( a STRING)
+           degree-sought(a DEGREE)
+           expected-year-of-graduation(a YEAR)
+           
+\end{verbatim}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(b)}
+
+\problemAnswer{ % This here will give you a box surrounding your answer.
+
+}
+\end{homeworkSection}
+
+\begin{homeworkSection}
+{(c)}
+
+\problemAnswer{ % This here will give you a box sourrounding your answer.
+
+}
+\end{homeworkSection}
+\end{homeworkProblem}
+
+
+\end{document}

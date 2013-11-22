@@ -1,0 +1,2 @@
+Problem #2
+(c) There problem here with the productions I provided in (b) is that for any new WME in the WM I add, the same production rule can be triggered again. This will add yet another element to the WM. Therefore if there is no rule to stop this, the number of elements in the WM will keep increasing which leads to a "run-away" chaining.
